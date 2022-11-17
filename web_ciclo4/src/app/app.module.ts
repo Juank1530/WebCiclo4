@@ -7,7 +7,8 @@ import { NavbarComponent } from './assets/navbar/navbar.component';
 import { FooterComponent } from './assets/footer/footer.component';
 import { IndexComponent } from './assets/index/index.component';
 import { ErrorComponent } from './assets/error/error.component';
-import { CreateComponent } from './modules/flights/create/create.component';
+//import { CreateComponent } from './modules/flights/create/create.component';
+import { Router, RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,12 @@ import { CreateComponent } from './modules/flights/create/create.component';
     NavbarComponent,
     FooterComponent,
     IndexComponent,
-    ErrorComponent,
-    CreateComponent
+    ErrorComponent
+    //CreateComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule
   ],
   providers: [],
