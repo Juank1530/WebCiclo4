@@ -1,1 +1,37 @@
-<p>edit works!</p>
+<div class="container">
+    <h3 class="center-align">Edit User</h3>
+   
+    <form [formGroup]="fgValidation" class="col s12" (ngSubmit)="edit()">
+      <input formControlName="id" type="hidden" class="validate">
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="name" type="text" class="validate">
+          <label class="active" for="name">Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="last_name" type="text" class="validate">
+          <label class="active" for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="phone" type="text" class="validate">
+          <label class="active" for="phone">phone</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="mail" type="email" class="validate">
+          <label class="active" for="mail">Email</label>
+          <span class="helper-text" data-error="Invalid Mail" data-success="right">Status</span>
+        </div>
+      </div>
+   
+      <div class="row center-align">
+        <button [disabled]="!fgValidation.valid" class="btn waves-effect waves-light" type="submit" name="action">Edit
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+  </div>
+  

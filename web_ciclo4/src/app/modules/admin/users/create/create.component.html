@@ -1,1 +1,34 @@
-<p>create works!</p>
+<div class="container">
+    <h3 class="center-align">Sing up User</h3>
+    <form [formGroup]="fgValidation" class="col s12" (ngSubmit)="store()">
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="name" type="text" class="validate">
+          <label for="name">Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="Lastnames" type="text" class="validate">
+          <label for="Lastnames">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="phone" type="text" class="validate">
+          <label for="phone">Phone</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="mail" type="email" class="validate">
+          <label for="mail">Email</label>
+          <span class="helper-text" data-error="Invalid mail" data-success="right">Status</span>
+        </div>
+      </div>
+   
+      <div class="row center-align">
+        <button [disabled]="!fgValidation.valid" class="btn waves-effect waves-light" type="submit" name="action">Send
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+  </div>

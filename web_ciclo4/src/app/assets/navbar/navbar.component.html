@@ -1,11 +1,14 @@
 <nav class="black">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Mission TIC 2022</a>
+      <a href="#" class="brand-logo"><i class="material-icons prefix">airplanemode_active</i>Fly Emirates</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a routerLink="/admin">Users</a></li>
-        <li><a routerLink="/airports">Airports</a></li>
-        <li><a routerLink="/routes">Routes</a></li>
-        <li><a routerLink="/flights">Flights</a></li>
+        <li *ngIf="activeSession"><a routerLink="/admin">Users</a></li>
+        <li *ngIf="activeSession"><a routerLink="/airports">Airports</a></li>
+        <li *ngIf="activeSession"><a routerLink="/routes">Routes</a></li>
+        <li *ngIf="activeSession"><a routerLink="/flights">Flights</a></li>
+        <!-- Session -->
+        <li *ngIf="!activeSession"><a routerLink="/security/login">Login</a></li>
+        <li *ngIf="activeSession"><a routerLink="/security/logout">Logout</a></li>
       </ul>
     </div>
   </nav>
