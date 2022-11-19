@@ -24,10 +24,6 @@ const routes: Routes = [
     loadChildren: () => import('./modules/flights/flights.module').then(m => m.FlightsModule)
   },
   {
-    path: 'planes',
-    loadChildren: () => import('./modules/planes/planes.module').then(m => m.PlanesModule)
-  },
-  {
     path: 'routes',
     loadChildren: () => import('./modules/routes/routes.module').then(m => m.RoutesModule)
   },

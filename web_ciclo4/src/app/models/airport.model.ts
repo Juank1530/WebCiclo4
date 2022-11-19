@@ -3,8 +3,8 @@ export class AirportModel{
     name?: string;
     city?: string;
     country?: string;
-    coord_x?: string;
-    coord_y?: string;
+    coor_x?: string;
+    coor_y?: string;
     acronym?: string;
     type?: string;
 }

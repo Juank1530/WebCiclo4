@@ -1,1 +1,46 @@
-<p>create works!</p>
+<div class="container">
+    <h3 class="center-align">Sing up Airport</h3>
+    <form [formGroup]="fgValidation" class="col s12" (ngSubmit)="store()">
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="name" type="text" class="validate">
+          <label for="name">Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="city" type="text" class="validate">
+          <label for="city">City</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="country" type="text" class="validate">
+          <label for="country">Country</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="coor_x" type="text" class="validate">
+          <label for="coor_x">Coord_x</label>
+        </div>
+        <div class="input-field col s6">
+            <input formControlName="coor_y" type="text" class="validate">
+            <label for="coor_y">Coord_y</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="acronym" type="text" class="validate">
+          <label for="acronym">Acronym</label>
+        </div>
+          <div class="input-field col s6">
+            <input formControlName="type" type="text" class="validate">
+            <label for="type">Type</label>
+          </div>
+        </div>
+      <div class="row center-align">
+        <button [disabled]="!fgValidation.valid" class="btn waves-effect waves-light" type="submit" name="action">Send
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+</div>

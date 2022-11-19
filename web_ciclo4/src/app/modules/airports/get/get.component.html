@@ -1,1 +1,34 @@
-<p>get works!</p>
+<div class="container">
+    <br>
+    <a routerLink="/airports/create" class="btn">Register Airport</a>
+   
+    <table class="table responsive">
+      <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Coord_x</th>
+            <th>Coord_y</th>
+            <th>Acronym</th>
+            <th>Type</th>
+        </tr>
+      </thead>
+   
+      <tbody>
+        <tr *ngFor="let p of list">
+          <td>{{p.name}}</td>
+          <td>{{p.city}}</td>
+          <td>{{p.country}}</td>
+          <td>{{p.coor_x}}</td>
+          <td>{{p.coor_y}}</td>
+          <td>{{p.acronym}}</td>
+          <td>{{p.type}}</td>
+          <td>
+            <a routerLink="/admin/edit/{{p.id}}" class="btn">Edit</a>
+            <button class="btn red" (click)="delete(p.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>

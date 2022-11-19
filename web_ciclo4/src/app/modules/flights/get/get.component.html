@@ -1,1 +1,34 @@
-<p>get works!</p>
+<div class="container">
+    <br>
+    <a routerLink="/flights/create" class="btn">Register Flight</a>
+   
+    <table class="table responsive">
+      <thead>
+        <tr>
+            <th>Start Date</th>
+            <th>Start Time</th>
+            <th>End Date</th>
+            <th>End Time</th>
+            <th>Seats Sold</th>
+            <th>Pilot Name</th>
+            <th>Route</th>
+        </tr>
+      </thead>
+   
+      <tbody>
+        <tr *ngFor="let p of list">
+          <td>{{p.start_date}}</td>
+          <td>{{p.start_time}}</td>
+          <td>{{p.end_date}}</td>
+          <td>{{p.end_time}}</td>
+          <td>{{p.seats_sold}}</td>
+          <td>{{p.pilot_name}}</td>
+          <td>{{p.route}}</td>
+          <td>
+            <a routerLink="/admin/edit/{{p.id}}" class="btn">Edit</a>
+            <button class="btn red" (click)="delete(p.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
