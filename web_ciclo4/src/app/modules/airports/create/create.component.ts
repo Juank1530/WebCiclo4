@@ -45,7 +45,7 @@ export class CreateComponent implements OnInit {
  
     this.airportService.store(airport).subscribe((data: AirportModel)=> {
       Swal.fire('Created successfully!', '', 'success')
-      this.router.navigate(['/admin/get']);
+      this.router.navigate(['/airports/get']);
     },
     (error: any) => {
       console.log(error)

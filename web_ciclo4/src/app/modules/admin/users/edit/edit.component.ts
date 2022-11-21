@@ -22,9 +22,9 @@ export class EditComponent implements OnInit {
   fgValidation = this.fb.group({
     id: ['', [Validators.required]],
     name: ['', [Validators.required]],
-    last_name: ['', [Validators.required]],
+    Lastnames: ['', [Validators.required]],
     phone: [{value: '', disabled: true}, [Validators.required, Validators.minLength(6)]],
-    mail: [{value: '', disabled: true}, [Validators.required, Validators.email]],
+    email: [{value: '', disabled: true}, [Validators.required, Validators.email]],
   });
 
   getWithId(id: string){
@@ -32,8 +32,8 @@ export class EditComponent implements OnInit {
       console.log(data)
       this.fgValidation.controls["id"].setValue(id)
       this.fgValidation.controls["name"].setValue(data.name as string)
-      this.fgValidation.controls["last_name"].setValue(data.Lastnames as string)
-      this.fgValidation.controls["mail"].setValue(data.email as string)
+      this.fgValidation.controls["Lastnames"].setValue(data.Lastnames as string)
+      this.fgValidation.controls["email"].setValue(data.email as string)
       this.fgValidation.controls["phone"].setValue(data.phone as string)
     })
   }
@@ -42,8 +42,8 @@ export class EditComponent implements OnInit {
     let user = new UserModel();
     user.id = this.fgValidation.controls["id"].value as string;
     user.name = this.fgValidation.controls["name"].value as string;
-    user.Lastnames = this.fgValidation.controls["last_name"].value as string;
-    user.email = this.fgValidation.controls["mail"].value as string;
+    user.Lastnames = this.fgValidation.controls["Lastnames"].value as string;
+    user.email = this.fgValidation.controls["email"].value as string;
     user.phone = this.fgValidation.controls["phone"].value as string;
  
     this.userService.update(user).subscribe((data: UserModel)=> {
@@ -55,11 +55,6 @@ export class EditComponent implements OnInit {
       alert("Fail send");
     })
   }
-
-
-
-
-
 
   ngOnInit(): void {
     let id = this.route.snapshot.params["id"]

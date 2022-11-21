@@ -25,8 +25,8 @@ export class AirportService {
       name: airport.name,
       city: airport.city,
       country: airport.country,
-      coord_x: airport.coor_x,
-      coord_y: airport.coor_y,
+      coor_x: airport.coor_x,
+      coor_y: airport.coor_y,
       acronym: airport.acronym,
       type: airport.type
     },{
@@ -58,8 +58,8 @@ export class AirportService {
       name: airport.name,
       city: airport.city,
       country: airport.country,
-      coord_x: airport.coor_x,
-      coord_y: airport.coor_y,
+      coor_x: airport.coor_x,
+      coor_y: airport.coor_y,
       acronym: airport.acronym,
       type: airport.type
     }, {

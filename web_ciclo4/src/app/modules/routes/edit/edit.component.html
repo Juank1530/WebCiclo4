@@ -1,1 +1,33 @@
-<p>edit works!</p>
+<div class="container">
+    <h3 class="center-align">Edit Route</h3>
+   
+    <form [formGroup]="fgValidation" class="col s12" (ngSubmit)="edit()">
+      <input formControlName="id" type="hidden" class="validate">
+      <div class="row">
+        <div class="input-field col s6">
+          <select class="browser-default" formControlName="origin" >
+            <option value="" disabled selected>Select the Origin Airport</option>
+            <option *ngFor="let airport of Airport_list" value="{{airport.name}}">{{airport.name}}</option>
+          </select>
+        </div>
+        <div class="input-field col s6">
+          <select class="browser-default" formControlName="destiny" >
+            <option value="" disabled selected>Select the Destiny Airport</option>
+            <option *ngFor="let airport of Airport_list" value="{{airport.name}}">{{airport.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="estimated_time" type="text" class="validate">
+          <label class="active" for="estimated_time">Estimated Time</label>
+        </div>
+      </div>
+      <div class="row center-align">
+        <button [disabled]="!fgValidation.valid" class="btn waves-effect waves-light" type="submit" name="action">Edit
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+  </div>
+  

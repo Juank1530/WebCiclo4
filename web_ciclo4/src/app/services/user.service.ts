@@ -48,9 +48,9 @@ export class UserService {
   update(user: UserModel): Observable<UserModel> {
     return this.http.patch<UserModel>(`${this.url}/users/${user.id}`, {
       name: user.name,
-      last_name: user.Lastnames,
+      Lastnames: user.Lastnames,
       phone: user.phone,
-      mail: user.email
+      email: user.email
     }, {
       headers: new HttpHeaders({
         "Authorization": `Bearer ${this.token}`

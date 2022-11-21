@@ -22,9 +22,9 @@ export class RouteService {
 
    store(route: RouteModel): Observable<RouteModel> {
     return this.http.post<RouteModel>(`${this.url}/routes`, {
-      start_date: route.origin,
-      start_time: route.destiny,
-      end_date: route.estimated_time
+      origin: route.origin,
+      destiny: route.destiny,
+      estimated_time: route.estimated_time
     },{
       headers: new HttpHeaders({
         "Authorization": `Bearer ${this.token}`
@@ -51,9 +51,9 @@ export class RouteService {
 
   update(route: RouteModel): Observable<RouteModel> {
     return this.http.patch<RouteModel>(`${this.url}/routes/${route.id}`, {
-      start_date: route.origin,
-      start_time: route.destiny,
-      end_date: route.estimated_time
+      origin: route.origin,
+      destiny: route.destiny,
+      estimated_time: route.estimated_time
     }, {
       headers: new HttpHeaders({
         "Authorization": `Bearer ${this.token}`
