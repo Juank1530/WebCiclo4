@@ -16,7 +16,7 @@ export class UserService {
     this.token = this.securityService.getToken();
   }
 
-  url = "http://localhost:3000"
+  url = "https://apiloopbackmissionticteam5.herokuapp.com/"
   token: string = ''
 
   store(user: UserModel): Observable<UserModel> {
